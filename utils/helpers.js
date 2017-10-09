@@ -139,7 +139,7 @@ export function getMetricMetaInfo (metric) {
     },
   }
 
-  return typeof metric === 'underfined'
+  return typeof metric === 'undefined'
     ? info
     : info[metric]
 }
