@@ -153,16 +153,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: white
+    backgroundColor: white,
   },
   row: {
     flexDirection: 'row',
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 20
   },
   iosSubmitButton: {
     backgroundColor: purple,
     padding: 10,
+    marginTop: 20,
     borderRadius: 7,
     height: 45,
     marginLeft: 40,
