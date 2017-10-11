@@ -41,10 +41,12 @@ const Tabs = TabNavigator({
   }
 })
 
+const store = createStore(reducer);
+
 export default class App extends React.Component {
   render() {
     return (
-      <Provider store={createStore(reducer)}>
+      <Provider store={store}>
         <View style={{flex: 1}}>
           <View style={{height: 20}}/>
           <Tabs />
