@@ -25,15 +25,23 @@ class History extends Component {
   renderItem = ({ today, ...metrics }, formattedDate, key) => (
     <View style={styles.item}>
       {today
-        ? <Text>{JSON.stringify(today)}</Text>
-        : <Text>{JSON.stringify(metrics)}</Text>
+        ? <View>
+            <DateHeader date={formattedDate} />
+            <Text style={styles.noDataText}>
+              {today}
+            </Text>
+          </View>
+        : <TouchableOpacity onPress={() => console.log('Pressed!')}>
+            <Text>{JSON.stringify(metrics)}</Text>
+          </TouchableOpacity>
       }
     </View>
   )
   renderEmptyDate(formattedDate) {
     return (
-      <View>
-        <Text>No data for this day</Text>
+      <View style={styles.item}>
+        <DateHeader date={formattedDate} />
+        <Text style={styles.noDataText}>No data for this day</Text>
       </View>
     );
   }
@@ -66,6 +74,11 @@ const styles = StyleSheet.create({
       width: 0,
       height: 3
     }
+  },
+  noDataText: {
+    fontSize: 16,
+    paddingTop: 20,
+    paddingBottom: 20
   }
 })
 
