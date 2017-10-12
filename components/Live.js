@@ -6,7 +6,7 @@ import { purple, white } from '../utils/colors';
 export default class Live extends React.Component {
   state = {
     coords: null,
-    status: 'undetermined',
+    status: 'denied',
     direction: ''
   };
   askPermission = () => {
@@ -21,8 +21,11 @@ export default class Live extends React.Component {
 
     if (status === 'denied') {
       return (
-        <View>
-          <Text>Denied</Text>
+        <View style={styles.center}>
+          <Foundation name='alert' size={50} />
+          <Text>
+            You denied the location, you can fix this by enabling location services in your settings.
+          </Text>
         </View>
       )
     }
