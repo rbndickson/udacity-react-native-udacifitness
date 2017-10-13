@@ -8,7 +8,7 @@ import { calculateDirection } from '../utils/helpers';
 export default class Live extends React.Component {
   state = {
     coords: null,
-    status: 'granted',
+    status: null,
     direction: ''
   };
   componentDidMount () {
@@ -89,7 +89,9 @@ export default class Live extends React.Component {
       <View style={styles.container}>
         <View style={styles.directionContainer}>
           <Text style={styles.header}>You're heading</Text>
-          <Text style={styles.direction}>North</Text>
+          <Text style={styles.direction}>
+            {direction}
+          </Text>
         </View>
         <View style={styles.metricContainer}>
           <View style={styles.metric}>
@@ -97,7 +99,7 @@ export default class Live extends React.Component {
               Altitude
             </Text>
             <Text style={[styles.subHeader, { color: white }]}>
-              {200} Feet
+              {Math.round(coords.altitude * 3.2808)} Feet
             </Text>
           </View>
           <View style={styles.metric}>
@@ -105,7 +107,7 @@ export default class Live extends React.Component {
               Speed
             </Text>
             <Text style={[styles.subHeader, { color: white }]}>
-              {88} MPH
+              {(coords.speed * 2.2369).toFixed(1)} MPH
             </Text>
           </View>
         </View>
