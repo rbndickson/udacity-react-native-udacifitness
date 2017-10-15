@@ -1,14 +1,14 @@
 {
   "expo": {
-    "sdkVersion": "19.0.0",
+    "sdkVersion": "21.0.0",
     "orientation": "portrait",
     "name": "Udacifitness",
     "description": "The best triathlon training app ever.",
     "slug": "udacifitness",
     "version": "1.0",
-    "icon": "https://iconlocation.com/triathlon-512.png",
+    "icon": "https://tylermcginnis.com/udacifitness-512.png",
     "notification": {
-      "icon": "https://iconlocation.com/triathlon-512.png"
+      "icon": "https://tylermcginnis.com/udacifitness-512.png"
     },
     "ios": {
      "bundleIdentifier": "org.udacifitness.exp",
